@@ -1,11 +1,12 @@
 %p#notice= notice
 
-<% for attribute in attributes -%>
-%p
-  %b <%= attribute.human_name %>:
-  = @<%= singular_table_name %>.<%= attribute.name %>
-<% end -%>
+%table.table
+  <% for attribute in attributes -%>
+    %tr
+      %th t(:<%= attribute.name %>).titlecase:
+      %td= @<%= singular_table_name %>.<%= attribute.name %>
+  <% end -%>
 
-= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
+= link_to t(:edit).humanize, edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
 \|
-= link_to 'Back', <%= index_helper %>_path
+= link_to t(:back).humanize, <%= index_helper %>_path
