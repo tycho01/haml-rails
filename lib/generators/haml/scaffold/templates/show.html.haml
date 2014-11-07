@@ -1,12 +1,10 @@
 %p#notice= notice
 
-%table.table
-  <% for attribute in attributes -%>
-    %tr
-      %th t(:<%= attribute.name %>).titlecase:
-      %td= @<%= singular_table_name %>.<%= attribute.name %>
-  <% end -%>
+%dl.dl-horizontal
+<% for attribute in attributes -%>
+  %dt= t(:<%= attribute.name %>).titlecase
+  %dd= @<%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
 
-= link_to t(:edit).humanize, edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)
-\|
-= link_to t(:back).humanize, <%= index_helper %>_path
+= link_to t(:edit).humanize, edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: "btn btn-default"
+= link_to t(:back).humanize, <%= index_helper %>_path, class: "btn btn-default"
