@@ -3,13 +3,13 @@
 %table.table
   %thead
     %tr
-<% for attribute in attributes -%>
+<% for attribute in attributes_names -%>
     %th t(:<%= attribute.name %>)
 <% end -%>
   %tbody
     - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
       %tr
-<% for attribute in attributes -%>
+<% for attribute in attributes_names -%>
       %td= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
         %td= link_to t(:show), <%= singular_table_name %>
