@@ -6,5 +6,5 @@
   %dd= @<%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
 
-= link_to t(:edit).humanize, edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: "btn btn-default"
-= link_to t(:back).humanize, <%= index_helper %>_path, class: "btn btn-default"
+= link_to t(:edit), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: "btn btn-default"
+= link_to t(:back), <%= index_helper %>_path, class: "btn btn-default"
