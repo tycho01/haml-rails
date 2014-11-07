@@ -1,4 +1,4 @@
-= form_for @<%= singular_table_name %> do |f|
+= semantic_form_for @<%= singular_table_name %>, validate: true, url: <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :put do |f|
   - if @<%= singular_table_name %>.errors.any?
     #error_explanation
       %ul
