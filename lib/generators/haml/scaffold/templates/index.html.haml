@@ -3,7 +3,7 @@
 %table.table
   %thead
     %tr
-<% for attribute in attributes_names -%>
+<% class_name.constantize.content_columns.each do |attribute| -%>
     %th t(:<%= attribute.name %>)
 <% end -%>
   %tbody
