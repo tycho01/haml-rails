@@ -2,6 +2,5 @@
 
 = render 'form'
 
-= link_to t(:show).humanize, @<%= singular_table_name %>
-\|
-= link_to t(:back).humanize, <%= index_helper %>_path
+= link_to t(:show).humanize, @<%= singular_table_name %>, class: "btn btn-default"
+= link_to t(:back).humanize, <%= index_helper %>_path, class: "btn btn-default"
