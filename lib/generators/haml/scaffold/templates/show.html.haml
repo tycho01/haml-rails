@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %dl.dl-horizontal
-<% for attribute in attributes -%>
+<% for attribute in attributes_names -%>
   %dt= t(:<%= attribute.name %>).titlecase
   %dd= @<%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
