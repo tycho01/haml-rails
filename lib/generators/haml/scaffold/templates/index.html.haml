@@ -3,19 +3,19 @@
 %table.table
   %thead
     %tr
-  <% for attribute in attributes -%>
-      %th t(:<%= attribute.name %>).humanize
-  <% end -%>
+<% for attribute in attributes -%>
+    %th t(:<%= attribute.name %>).humanize
+<% end -%>
   %tbody
     - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
       %tr
-  <% for attribute in attributes -%>
-        %td= <%= singular_table_name %>.<%= attribute.name %>
-  <% end -%>
+<% for attribute in attributes -%>
+      %td= <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
         %td= link_to t(:show).humanize, <%= singular_table_name %>
         %td= link_to t(:edit).humanize, edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
         %td= link_to t(:destroy).humanize, <%= singular_table_name %>, :method => :delete, :data => { :confirm => t(:are_you_sure).humanize }
 
 %br
 
-= link_to t(:new_<%= singular_table_name %>).humanize, new_<%= singular_table_name %>_path
+= link_to t(:new_<%= singular_table_name %>).humanize, new_<%= singular_table_name %>_path, class: "btn btn-default"
